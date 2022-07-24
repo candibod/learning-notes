@@ -1,26 +1,30 @@
-{% extends "bootstrap/base.html" %}
-{% load static %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>GitHub Markdown CSS demo</title>
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 45px;
+			}
 
-{% block css %}
-  <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
-{% endblock %}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: #0d1117;
+				}
+			}
 
-{% block content %}
-  <h1>Project es</h1>
-{% endblock %}
-
-{% block js %}
-  <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/typo.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'martor/js/martor.bootstrap.min.js' %}"></script>
-
-  <script>
-    $('form [name="title"]').attr({
-      'class': 'form-control',
-      'placeholder': 'Post Title'
-    });
-  </script>
-{% endblock %}
+    </style>
+</head>
+<body>
+<article class="markdown-body">
+</article>
+</body>
+</html>

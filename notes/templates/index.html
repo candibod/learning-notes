@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block content %}
-<table style="table-layout: auto;">
+<div>
     {% for key, value in data.items %}
     {% include "helpers/dynamic-table-render.html" with key=key value=value %}
     {% endfor %}
-</table>
+</div>
 {% endblock %}
 
 {% block js %}

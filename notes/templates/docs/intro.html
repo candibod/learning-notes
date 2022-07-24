@@ -1,47 +1,47 @@
 {% extends "bootstrap/base.html" %}
 {% load static %}
 
-{% block css %}
-  <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
-{% endblock %}
-
 {% block content %}
-  <h1>Project Title</h1>
+<h1>Project Title</h1>
 <p>A brief description of what this project does and who it's for</p>
 <h2>Intro</h2>
-<p>C, C++, and Java are examples of static languages. They require you to specify some low-level details like data types for the computer.</p>
+<p>C, C++, and Java are examples of static languages. They require you to specify some low-level details like data types
+    for the computer.</p>
 <pre><code class="language-java">int language = 2;
 </code></pre>
-<p>In contrast, dynamic languages (also called scripting languages) do not force you to declare variable types before using them.</p>
+<p>In contrast, dynamic languages (also called scripting languages) do not force you to declare variable types before
+    using them.</p>
 <p>Ex: Perl, Ruby, PHP, GO(golang), Python</p>
 <pre><code class="language-python">language = 2
 </code></pre>
 <p>Categories
-Languages
-Language Classes Programming Paradigm
-Procedural
-Scripting
-C, C++, C#, Objective-C, Java, GO CoffeeScript, JavaScript, Python, Perl, Php, Ruby Clojure, Erlang, Haskell, Scala
-Functional
-Compilation Class
-Static
-Dynamic
-C, C++, C#, Objective-C, Java, Go, Haskell, Scala CoffeeScript, JavaScript, Python, Perl, Php, Ruby, Clojure, Erlang
-Type Class
-Strong
-Weak
-C#, Java, Go, Python, Ruby, clojure, Erlang, Haskell, Scala C, C++, Objective-C, CoffeeScript, JavaScript, Perl, Php Others C, C++, Objective-C
-Memory Class
-Managed Unmanaged</p>
+    Languages
+    Language Classes Programming Paradigm
+    Procedural
+    Scripting
+    C, C++, C#, Objective-C, Java, GO CoffeeScript, JavaScript, Python, Perl, Php, Ruby Clojure, Erlang, Haskell, Scala
+    Functional
+    Compilation Class
+    Static
+    Dynamic
+    C, C++, C#, Objective-C, Java, Go, Haskell, Scala CoffeeScript, JavaScript, Python, Perl, Php, Ruby, Clojure, Erlang
+    Type Class
+    Strong
+    Weak
+    C#, Java, Go, Python, Ruby, clojure, Erlang, Haskell, Scala C, C++, Objective-C, CoffeeScript, JavaScript, Perl, Php
+    Others C, C++, Objective-C
+    Memory Class
+    Managed Unmanaged</p>
 <h1>Markdown Syntax</h1>
 <p>The basic syntax outlined in the original Markdown design document.</p>
 <br>
 <h2>Emphasis Text</h2>
 <p>Bold: <strong>Bold</strong><br>
-Italic: <em>Italic</em><br>
-<del>Strike Off</del><br></p>
+    Italic: <em>Italic</em><br>
+    <del>Strike Off</del>
+    <br></p>
 <blockquote>
-<p>Blockquote</p>
+    <p>Blockquote</p>
 </blockquote>
 <h2>Code Block</h2>
 <p><code>Code block - single line</code></p>
@@ -59,59 +59,59 @@ b = 2
 <p><a href="url">link</a></p>
 <p>Unordered List</p>
 <ul>
-<li>apple</li>
-<li>orange</li>
+    <li>apple</li>
+    <li>orange</li>
 </ul>
 <p>Ordered List</p>
 <ol>
-<li>apple</li>
-<li>orange</li>
+    <li>apple</li>
+    <li>orange</li>
 </ol>
 <p>Checkbox</p>
 <ul>
-<li><input type="checkbox" disabled="" /> apple</li>
-<li><input type="checkbox" checked="" disabled="" /> orange</li>
+    <li><input type="checkbox" disabled=""/> apple</li>
+    <li><input type="checkbox" checked="" disabled=""/> orange</li>
 </ul>
 <p>Table</p>
 <table>
-<thead>
-<tr>
-<th align="left">Column 1</th>
-<th align="left">Column 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Cell 1</td>
-<td align="left">Cell 2</td>
-</tr>
-<tr>
-<td align="left">Cell 1</td>
-<td align="left">Cell 2</td>
-</tr>
-</tbody>
+    <thead>
+    <tr>
+        <th align="left">Column 1</th>
+        <th align="left">Column 2</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td align="left">Cell 1</td>
+        <td align="left">Cell 2</td>
+    </tr>
+    <tr>
+        <td align="left">Cell 1</td>
+        <td align="left">Cell 2</td>
+    </tr>
+    </tbody>
 </table>
 <h4>Table with Alignment</h4>
 <table>
-<thead>
-<tr>
-<th align="left">Syntax</th>
-<th align="center">Description</th>
-<th align="right">Test Text</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Header</td>
-<td align="center">Title</td>
-<td align="right">Here's this</td>
-</tr>
-<tr>
-<td align="left">Paragraph</td>
-<td align="center">Text</td>
-<td align="right">And more</td>
-</tr>
-</tbody>
+    <thead>
+    <tr>
+        <th align="left">Syntax</th>
+        <th align="center">Description</th>
+        <th align="right">Test Text</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td align="left">Header</td>
+        <td align="center">Title</td>
+        <td align="right">Here's this</td>
+    </tr>
+    <tr>
+        <td align="left">Paragraph</td>
+        <td align="center">Text</td>
+        <td align="right">And more</td>
+    </tr>
+    </tbody>
 </table>
 <p>Emojis</p>
 <p>&#x1f4ab;</p>
@@ -119,29 +119,9 @@ b = 2
 <h1>Heading level 1</h1>
 <h2>Heading level 2</h2>
 <p>Horizantal rules</p>
-<hr />
-<hr />
-<hr />
+<hr/>
+<hr/>
+<hr/>
 
 
-{% endblock %}
-
-{% block js %}
-  <script type="text/javascript" src="{% static 'plugins/js/ace.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/typo.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/spellcheck.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'martor/js/martor.bootstrap.min.js' %}"></script>
-
-  <script>
-    $('form [name="title"]').attr({
-      'class': 'form-control',
-      'placeholder': 'Post Title'
-    });
-  </script>
 {% endblock %}
