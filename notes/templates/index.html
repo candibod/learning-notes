@@ -1,9 +1,9 @@
-{% extends "bootstrap/base.html" %}
+{% extends "app/base.html" %}
 
 {% block content %}
 <div>
     {% for key, value in data.items %}
-    {% include "helpers/dynamic-table-render.html" with key=key value=value %}
+    {% include "helpers/dynamic-table-render.html" with key=key value=value prefix="" %}
     {% endfor %}
 </div>
 {% endblock %}

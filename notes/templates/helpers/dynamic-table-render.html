@@ -15,15 +15,17 @@
             <ul>
                 {% for key1, value1 in value.items %}
                 {% if value1|get_type == 'string' %}
-                <li><a href="/docs/{{ value1 }}">{{ value1 }}</a></li>
-                {% else %}
-                {% for key, value in data.items %}
-                {% include "helpers/dynamic-table-render.html" with key=key1 value=value1 %}
-                {% endfor %}
+                <li><a href="/docs/{{ prefix }}{{ value1 }}">{{ value1 }}</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
-
+            {% for key1, value1 in value.items %}
+            {% if value1|get_type != 'string' %}
+            {% for key, value in data.items %}
+            {% include "helpers/dynamic-table-render.html" with key=key1 value=value1 prefix=prefix|add:key1|add:"_" %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
         </td>
     </tr>
 </table>

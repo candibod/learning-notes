@@ -1,0 +1,163 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<div>
+    <h2 class="code-line" data-line-start=0 data-line-end=1><a id="Linear_Data_Structures_0"></a>Linear Data Structures</h2>
+    <p class="has-line-data" data-line-start="1" data-line-end="2">Stacks and Queues. They differ based on how data is added or removed.</p>
+    <h6 class="code-line" data-line-start=3 data-line-end=4><a id="STACKS_3"></a>STACKS</h6>
+    <p class="has-line-data" data-line-start="4" data-line-end="6">A collection where items are both added and removed from the top. This is known as a Last In
+        First Out collection.&lt;br&gt;<br>
+        Think of this as a stack of books where the last one added to the stack is the 1st to come off.</p>
+    <pre><code class="has-line-data" data-line-start="7" data-line-end="55"># Here we implement the functions of a Stack using a List
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    # Puts value in Stack
+    def push(self, data):
+        self.stack.insert(0, data)
+
+    def is_empty(self):
+        return self.stack == []
+
+    # Returns and deletes value from Stack
+    def pop(self):
+        if self.is_empty():
+            return &quot;Stack Empty&quot;
+        return self.stack.pop(0)
+
+    def peek(self):
+        return self.stack[0]
+
+    def size(self):
+        return len(self.stack)
+
+    # Lets create a function using our stack that a string
+    def reverse_string(self):
+        while True:
+            if len(self.stack) == 0:
+                break
+            else:
+                print(self.stack.pop(0), end=&quot;&quot;)
+
+
+s_1 = Stack()
+s_1.push(&quot;Cat&quot;)
+s_1.push(&quot;Dog&quot;)
+print(s_1.peek()) # Dog
+print(s_1.size()) # 2
+print(s_1.pop()) # Dog
+print(s_1.pop()) # Cat
+print(s_1.pop()) # Stack Empty
+
+# Reverses the characters passed in
+s_1.push(&quot;C&quot;)
+s_1.push(&quot;a&quot;)
+s_1.push(&quot;t&quot;)
+s_1.reverse_string() # taC
+</code></pre>
+    <h6 class="code-line" data-line-start=56 data-line-end=57><a id="QUEUES_56"></a>QUEUES</h6>
+    <p class="has-line-data" data-line-start="57" data-line-end="58">A collection that operates using First In First Out logic. An example of this in the real
+        world would be a line. If you are the 1st there you are served 1st.</p>
+    <pre><code class="has-line-data" data-line-start="59" data-line-end="108"># Let's make a Queue using a List
+class Queue:
+    def __init__(self):
+        self.queue = []
+
+    # Adds value to Queue
+    def enqueue(self, data):
+        self.queue.insert(0, data)
+
+    def is_empty(self):
+        return self.queue == []
+
+    # Returns and deletes a value from Queue
+    def dequeue(self):
+        if self.is_empty():
+            return &quot;Queue Empty&quot;
+        return self.queue.pop()
+
+    def size(self):
+        return len(self.queue)
+
+    # This function will pause as each item has
+    # its turn
+    def wait_your_turn(self):
+        while True:
+            if len(self.queue) == 0:
+                break
+            else:
+                print(f&quot;{self.dequeue()} takes their turn&quot;)
+                # Pause 3 seconds
+                time.sleep(3)
+
+
+q_1 = Queue()
+q_1.enqueue(&quot;Cat&quot;)
+q_1.enqueue(&quot;Dog&quot;)
+print(q_1.size()) # 2
+print(q_1.dequeue()) # Cat
+print(q_1.dequeue()) # Dog
+print(q_1.dequeue()) # Queue Empty
+
+# Test turn taking function
+q_1.enqueue(&quot;Cat&quot;)
+q_1.enqueue(&quot;Dog&quot;)
+q_1.wait_your_turn()
+# Output
+Cat takes their turn
+Dog takes their turn
+</code></pre>
+    <h6 class="code-line" data-line-start=109 data-line-end=110><a id="DEQUES_109"></a>DEQUES</h6>
+    <p class="has-line-data" data-line-start="110" data-line-end="111">A collection that allows you to add or remove data from either the front or end of the
+        list.</p>
+    <pre><code class="has-line-data" data-line-start="113" data-line-end="161">class Deque:
+    def __init__(self):
+        self.deque = []
+
+    def add_front(self, data):
+        self.deque.append(data)
+
+    def add_rear(self, data):
+        self.deque.insert(0, data)
+
+    def is_empty(self):
+        return self.deque == []
+
+    def remove_front(self):
+        if self.is_empty():
+            return &quot;Empty Deque&quot;
+        else:
+            return self.deque.pop()
+
+    def remove_rear(self):
+        if self.is_empty():
+            return &quot;Empty Deque&quot;
+        else:
+            return self.deque.pop(0)
+
+    def size(self):
+        return len(self.deque)
+
+    # Checks if string is a palindrome which
+    # is the same word forward or backward
+    # Racecar, Rotator, etc.
+    def check_palindrome(self):
+        is_palindrome = True
+        while self.size() &gt; 1 and is_palindrome:
+            front = self.remove_front()
+            rear = self.remove_rear()
+            if front != rear:
+                is_palindrome = False
+        return is_palindrome
+
+d_1 = Deque()
+d_1.add_front(&quot;Dog&quot;)
+d_1.add_rear(&quot;Cat&quot;)
+d_1.add_rear(&quot;Mouse&quot;)
+print(f&quot;Front : {d_1.remove_front()}&quot;)
+print(f&quot;Rear : {d_1.remove_rear()}&quot;)
+print(f&quot;Size : {d_1.size()}&quot;)
+</code></pre>
+</div>
+{% endblock %}

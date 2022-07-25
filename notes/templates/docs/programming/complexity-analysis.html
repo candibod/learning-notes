@@ -1,0 +1,53 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<div>
+    <h1 class="code-line" data-line-start=0 data-line-end=2><a id="Complexity_Analysis_0"></a>Complexity Analysis</h1>
+    <p class="has-line-data" data-line-start="3" data-line-end="4">Two main things to measure <code>usefulness</code> of the algorithm</p>
+    <ul>
+        <li class="has-line-data" data-line-start="4" data-line-end="5">Time Complexity</li>
+        <li class="has-line-data" data-line-start="5" data-line-end="7">Space Complexity</li>
+    </ul>
+    <p class="has-line-data" data-line-start="7" data-line-end="8">If we have given input to the computer, <code>Execution Time</code> is the time it took to
+        execute &amp; return the desired output</p>
+    <pre><code class="has-line-data" data-line-start="10" data-line-end="19"># Input -&gt; Execution Time
+I1 -&gt; T1
+I2 -&gt; T2
+I3 -&gt; T3
+    .
+    .
+    .
+In -&gt; Tn
+</code></pre>
+    <p class="has-line-data" data-line-start="20" data-line-end="21">If we the plot points in the co-ordinate system by taking input(I1, I2…) on X-Axis &amp;
+        execution time(T1, T2…) on the Y-Axis, we can derive a curve by joining all the points plotted(also known as <code>curve fitting</code>). we can then
+        derive a function out of the curve which will be like</p>
+    <pre><code class="has-line-data" data-line-start="22" data-line-end="24">f(I) -&gt; T
+</code></pre>
+    <p class="has-line-data" data-line-start="25" data-line-end="26">Example:</p>
+    <pre><code class="has-line-data" data-line-start="27" data-line-end="39"># Let's assume the function of the graph
+f(i) = 2i^3 + 4i^2 + 8i + 1
+
+# Since this alalysis is mainly considered when dealt with large inputs, in those cases constants can be neglected
+f(i) = 2i^3 + 4i^2 + 8i
+
+# To simplify it further, we consider the term with largest degree &amp; neglecting the lesser degree one's
+f(i) = 2i^3
+
+# To simplify it even further, we will remove the constants
+f(i) = i^3
+</code></pre>
+    <p class="has-line-data" data-line-start="40" data-line-end="42">Since it is not the exact function we have derived earlier from the graph, we call it as
+        Order which is <code>Time Complexity</code><br>
+        <code>O(i^3)</code></p>
+    <pre><code class="has-line-data" data-line-start="44" data-line-end="51"># Possible big O notation values
+O(1)
+O(n)
+O(n^2)
+O(log(n))
+O(nlog(n))
+</code></pre>
+    <p class="has-line-data" data-line-start="53" data-line-end="54"><code>Space Complixity</code> will be calculated in the same as time complexity but rather
+        than exection time it the space required to execute</p>
+</div>
+{% endblock %}

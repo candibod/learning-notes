@@ -31,12 +31,17 @@ def serialize_file_path(data, file_path):
 
 
 def render_docs_file(request, doc_path):
-    if len(doc_path) > 20:
+    if len(doc_path) > 40:
         return HttpResponseNotFound("Whoops! Looks like this page went on vacation.")
 
-    doc_folder = os.path.realpath(os.getcwd() + "/notes/templates/docs/" + str(doc_path).replace("_", "/") + ".html")
+    print("docpath", doc_path)
+
+    doc_folder = os.path.realpath(os.getcwd() + "/notes/templates/docs/")
+    doc_folder = doc_folder + os.sep + doc_path.replace("_", os.sep) + ".html"
+
+    print("folder", doc_folder)
 
     if not os.path.isfile(doc_folder):
         return HttpResponseNotFound("Whoops! Looks like this page went on vacation.")
 
-    return render(request, "docs/" + str(doc_path).replace("_", "/") + ".html")
+    return render(request, "docs/" + str(doc_path).replace("_", os.sep) + ".html")

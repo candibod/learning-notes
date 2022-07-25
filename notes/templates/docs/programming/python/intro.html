@@ -1,0 +1,245 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+
+    <p>Python runs on an interpreter system(No need to compile and convert into machine language program), meaning that code can be executed as soon as it is
+        written. This means that prototyping can be very quick.</p>
+    &lt;br&gt;
+    <p><strong>Variables</strong> are containers for storing data values. Variables do not need to be declared with any particular type, and can even change
+        type after they have been set.</p>
+    <pre><pre><code>x = 4 # x is of type int
+x = "Sally" # x is now of type str
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Casting</strong> is when you convert a variable value from one type to another</p>
+    <pre><pre class=" language-python"><code class=" language-python">x <span class="token operator">=</span> <span class="token builtin">str</span><span
+            class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>    <span class="token comment"># x will be '3'</span>
+y <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">3</span><span
+                class="token punctuation">)</span>    <span class="token comment"># y will be 3</span>
+z <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">3</span><span
+                class="token punctuation">)</span>  <span class="token comment"># z will be 3.0</span></code></pre></pre>
+    <h4 id="md-zprev-link-22">Variable Names</h4>
+    <ul>
+        <li>A variable name must start with a letter or the underscore character</li>
+        <li>A variable name cannot start with a number</li>
+        <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ). Variable names are case-sensitive (age, Age and AGE
+            are three different variables)
+        </li>
+    </ul>
+    <table>
+        <thead>
+        <tr>
+            <th style="text-align: left;">Pattern</th>
+            <th style="text-align: left;">Example</th>
+            <th style="text-align: left;">Meaning</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="text-align: left;">Single Leading Underscore</td>
+            <td style="text-align: left;">_var</td>
+            <td style="text-align: left;">Naming convention indicating a name is meant for internal use. Generally not enforced by the Python interpreter
+                (except in wildcard imports) and meant as a hint to the programmer only.
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Single Trailing Underscore</td>
+            <td style="text-align: left;">var_</td>
+            <td style="text-align: left;">Used by convention to avoid naming conflicts with Python keywords.</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Double Leading Underscore</td>
+            <td style="text-align: left;">__var</td>
+            <td style="text-align: left;">It causes the Python interpreter to rewrite the attribute name in order to avoid naming conflicts in subclasses. This
+                is also called name mangling
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Double Leading and Trailing Underscore</td>
+            <td style="text-align: left;">__var__</td>
+            <td style="text-align: left;">Indicates special methods defined by the Python language. Avoid this naming scheme for your own attributes.</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Single Underscore</td>
+            <td style="text-align: left;">_</td>
+            <td style="text-align: left;">Sometimes used as a name for temporary or insignificant variables (“don’t care”). Also: The result of the last
+                expression in a Python REPL.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>:information_source: Double underscores are often referred to as “dunders” in the Python community.</p>
+    <h4 id="md-zprev-link-38">Python operators</h4>
+    <table>
+        <thead>
+        <tr>
+            <th style="text-align: left;">Type</th>
+            <th style="text-align: left;">Operators</th>
+            <th style="text-align: left;">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="text-align: left;">Arithmetic operators</td>
+            <td style="text-align: left;"><code>+ - * / % ** //</code></td>
+            <td style="text-align: left;">used with numeric values to perform common mathematical operations</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Assignment operators</td>
+            <td style="text-align: left;"><code>= += -= *= /= %= //= **= &amp;= |= ^= &gt;&gt;= &lt;&lt;=</code></td>
+            <td style="text-align: left;">used to assign values to variables</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Comparison operators</td>
+            <td style="text-align: left;"><code>== != &gt; &lt; &gt;= &lt;=</code></td>
+            <td style="text-align: left;">Used to compare two values</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Logical operators</td>
+            <td style="text-align: left;"><code>and</code> <code>or</code> <code>not</code></td>
+            <td style="text-align: left;">used to combine conditional statements</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Identity operators</td>
+            <td style="text-align: left;"><code>is</code> <code>is not</code></td>
+            <td style="text-align: left;">used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory
+                location
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Membership operators</td>
+            <td style="text-align: left;"><code>in</code> <code>not in</code></td>
+            <td style="text-align: left;">used to test if a sequence is presented in an object</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Bitwise operators</td>
+            <td style="text-align: left;"><code>&amp; | ^ ~ &lt;&lt; &gt;&gt;</code></td>
+            <td style="text-align: left;">used to compare (binary) numbers</td>
+        </tr>
+        </tbody>
+    </table>
+    &lt;br&gt;
+    <p><strong>List comprehension</strong> offers a shorter syntax when you want to create a new list based on the values of an existing list.</p>
+    <pre><pre><code>newlist = [x for x in range(10)]
+newlist = [x for x in range(10) if x &lt; 5]
+newlist = [x if x != "banana" else "orange" for x in fruits]
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Packing/Unpacking Tuples:</strong></p>
+    <pre><pre><code>fruits = ("apple", "banana", "cherry", "strawberry") # Packing
+(green, yellow, red, white) = fruits # Unpacking
+(green, yellow, *red) = fruits # Unpacking
+(green, *tropic, red) = fruits # Unpacking
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Parameters &amp; Arguments</strong></p>
+    <pre><pre><code>def func(foo, bar=None, **kwargs): # Parameters
+    pass
+
+func(42, bar=314, extra=somevar) # Arguments
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Arbitrary Arguments, *args</strong><br>
+        If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition. This way the
+        function will receive a tuple of arguments</p>
+    <pre><pre><code>def my_function(*kids):
+  print("The youngest child is " + kids[2])
+
+my_function("Emil", "Tobias", "Linus")
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Arbitrary Keyword Arguments, **kwargs</strong><br>
+        If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function
+        definition. This way the function will receive a dictionary of arguments.</p>
+    <pre><pre><code>def my_function(**kid):
+  print("His last name is " + kid["lname"])
+
+my_function(fname = "Tobias", lname = "Refsnes")
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Python Lambda</strong><br>
+        A lambda function is a small anonymous function which can take any number of arguments, but can only have one expression.</p>
+    <pre><pre><code>x = lambda a : a + 10
+print(x(5))
+
+# The power of lambda is better shown when you use them as an anonymous function inside another function. function definition that takes one argument, and that argument will be multiplied with an unknown number
+
+def myfunc(n): # Example 2
+  return lambda a : a * n
+
+mydoubler = myfunc(2)
+mytripler = myfunc(3)
+
+print(mydoubler(11))
+print(mytripler(11))
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Classes &amp; Objects</strong><br>
+        Python is an object oriented programming language. Almost everything in Python is an object, with its properties and methods. A Class is like an object
+        constructor, or a "blueprint" for creating objects.</p>
+    <pre><pre><code>class Person:
+  # name and age are object properties
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def myfunc(self): # Object Method
+    print("Hello my name is " + self.name)
+
+p1 = Person("John", 36) # Create Object
+p1.myfunc()
+
+del p1.name # Delete Property
+del p1 # Delete object
+</code></pre></pre>
+    <p>The <code>self</code> parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class. It does
+        not have to be named <code>self</code> , you can call it whatever you like, but it has to be the first parameter of any function in the class</p>
+    &lt;br&gt;
+    <p><strong>Python Inheritance</strong><br>
+        Inheritance allows us to define a class that inherits all the methods and properties from another class. Parent class is the class being inherited from,
+        also called base class. Child class is the class that inherits from another class, also called derived class.</p>
+    <pre><pre><code>class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+x = Person("John", "Doe")
+x.printname()
+
+class Student(Person):
+  pass # Use the pass keyword when you do not want to add any other properties or methods to the class.
+
+# Now the Student class has the same properties and methods as the Person class.
+x = Student("Mike", "Olsen")
+x.printname()
+</code></pre></pre>
+    &lt;br&gt;
+    <p><strong>Add the __init__() Function</strong><br>
+        If We want to add the __init__() function to the child class (instead of the pass keyword). the child class will no longer inherit the parent's
+        __init__() function. The child's __init__() function overrides the inheritance of the parent's __init__() function.</p>
+    <p>To keep the inheritance of the parent's __init__() function, add a call to the parent's __init__() function:</p>
+    <pre><pre><code>class Student(Person):
+  def __init__(self, fname, lname):
+    Person.__init__(self, fname, lname)
+</code></pre></pre>
+    <p>By using the super() function, you do not have to use the name of the parent element, it will automatically inherit the methods and properties from its
+        parent.</p>
+    <pre><pre><code>class Student(Person):
+  def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+</code></pre></pre>
+    &lt;br&gt;
+    <table>
+        <thead>
+        <tr>
+            <th>The ENDDDDD!</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+{% endblock %}

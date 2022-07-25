@@ -1,0 +1,128 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<div>
+    <h3 class="code-line" data-line-start=0 data-line-end=1><a id="Why_is_One_Algorithm_Better_0"></a>Why is One Algorithm Better</h3>
+    <ol>
+        <li class="has-line-data" data-line-start="1" data-line-end="2">Which is more readable</li>
+        <li class="has-line-data" data-line-start="2" data-line-end="3">Which consumes the least amount of memory</li>
+        <li class="has-line-data" data-line-start="3" data-line-end="5">Execution time</li>
+    </ol>
+    <h3 class="code-line" data-line-start=5 data-line-end=6><a id="On__BigO_Notation_5"></a>O(n) - Big-O Notation</h3>
+    <p class="has-line-data" data-line-start="6" data-line-end="7">O refers to the Order of Magnitude, is a measure of how well an algorithm is going to scale
+        as the amount of data being consumed increases, How well does it perform as it increases from a 10 element array versus a 10,000 element array.</p>
+    <h5 class="code-line" data-line-start=8 data-line-end=9><a id="Lets_say_you_have_this_algorithm_8"></a>Let’s say you have this algorithm</h5>
+    <pre><code class="has-line-data" data-line-start="10" data-line-end="12"># 45n^3 + 20n^2 + 19 = 84 (if n is 1)</code></pre>
+    <p class="has-line-data" data-line-start="12" data-line-end="16">I want to define the part of the algorithm that has the biggest effect during the
+        calculation of the answer.&lt;br&gt;<br>
+        If <code>n=2</code> the answer goes from 84 to 459. It doesn’t take long until + 19 doesn’t matter.&lt;br&gt;<br>
+        If <code>n=10</code> the answer is 47,019 and n^2 has little effect on our answer because 45n^3 = 45,000<br>
+        Because the n^3 has the greatest effect on our final answer and so we would say this algorithm has an order of <code>n^3</code> or <code>O(N^3)</code>
+    </p>
+    <h3 class="code-line" data-line-start=18 data-line-end=19><a id="Common_types_of_BIGO_notations_18"></a>Common types of BIG-O notations</h3>
+    <pre><code class="has-line-data" data-line-start="20" data-line-end="22">O(1), O(N), O(N^2), O(log N), O(N log N)</code></pre>
+    <h6 class="code-line" data-line-start=23 data-line-end=24><a id="O1_23"></a>O(1)</h6>
+    <p class="has-line-data" data-line-start="24" data-line-end="26">An algorithm that executes in the same amount of time regardless of how big the list is&lt;br&gt;<br>
+        A 10 item list or a 10,000 item list will always take the same amount of time with this operation</p>
+    <pre><code class="has-line-data" data-line-start="27" data-line-end="31">
+        list_1 = []
+        def add_item_to_list(num):
+        list_1.append(num)
+    </code></pre>
+    <h6 class="code-line" data-line-start=32 data-line-end=33><a id="ON_32"></a>O(N)</h6>
+    <p class="has-line-data" data-line-start="33" data-line-end="36">Algorithm execution time to complete is directly proportional to the amount of data
+        supplied&lt;br&gt;<br>
+        An example of this is a linear search because it requires us to look in each space of an array&lt;br&gt;<br>
+        This is true even if we find the item during the 1st search because Big-O Notation describes the worst case situation through using the algorithm</p>
+    <pre><code class="has-line-data" data-line-start="37" data-line-end="45">list_1 = [1, 2, 3, 4]
+def linear_search(val):
+    val_found = &quot;Value Not Found&quot;
+    for i in list_1:
+        if i == val:
+            val_found = &quot;Value Found&quot;
+    print(val_found)
+</code></pre>
+    <h6 class="code-line" data-line-start=46 data-line-end=47><a id="ON2_46"></a>O(N^2)</h6>
+    <p class="has-line-data" data-line-start="47" data-line-end="50">Algorithm execution time to complete is proportional to the square of the amount of data.&lt;br&gt;<br>
+        A Bubble sort is an example because it contains nested iterations. Further nested iterations will result in O(N^3), O(N^4) performance.&lt;br&gt;<br>
+        Each pass through the outer loop O(N) requires us to go through the entire list again so N is squared</p>
+    <pre><code class="has-line-data" data-line-start="51" data-line-end="64">def bubble_sort():
+    list_size = len(list_1)
+    # Cycle through each value in the list
+    for i in range(list_size):
+        # We don't have to check previous i items
+        # checked
+        for j in range(0, list_size-i-1):
+            # If the 1st value is greater then the
+            # 2nd have them swap
+            if list_1[j] &gt; list_1[j+1]:
+                list_1[j], list_1[j+1] = list_1[j+1], list_1[j]
+
+</code></pre>
+    <h6 class="code-line" data-line-start=65 data-line-end=66><a id="Olog_N_65"></a>O(log N)</h6>
+    <p class="has-line-data" data-line-start="66" data-line-end="70">Algorithms in which the amount of data is roughly decreased by 50% each time through the
+        algorithm.&lt;br&gt;<br>
+        If <code>10^2 = 100</code> then the <code>log10(100) = 2</code>, because a logarithm tells us what power is used to make a number.&lt;br&gt;<br>
+        Log N increases at a dramatically slower rate as N increases which makes them more efficient as N increases.&lt;br&gt;<br>
+        A Binary search is an example. It is extremely fast, but the negative is that it only works with sorted lists. After the sort it starts searching in the
+        middle of the list which allows it to eliminate 1/2 of the values after each cycle through the list.</p>
+    <pre><code class="has-line-data" data-line-start="72" data-line-end="86">def binary_search(value: int):
+    list_size = len(list_1)
+    low_index = 0
+    high_index = list_size - 1
+    while low_index &lt;= high_index:
+        mid_index = int((high_index + low_index) / 2)
+        if list_1[mid_index] &lt; value:
+            low_index = mid_index + 1
+        elif list_1[mid_index] &gt; value:
+            high_index = mid_index - 1
+        else:
+            print(f&quot;Found match - {value} {mid_index}&quot;)
+            low_index = high_index + 1
+</code></pre>
+    <h6 class="code-line" data-line-start=87 data-line-end=88><a id="On_log_n_87"></a>O(n log n)</h6>
+    <p class="has-line-data" data-line-start="88" data-line-end="89">With the Quick Sort we divide up all values in the list into 2 parts. Each part is called a
+        partition. The value that lies in the middle of those 2 parts is called the pivot. As we cycle through the list if a value is greater then the pivot it
+        goes to the right and if less it goes to the left.</p>
+    <pre><code class="has-line-data" data-line-start="90" data-line-end="124">def partition(start, end):
+    pivot = list_1[start]
+    low = start + 1
+    high = end
+    while True:
+        while low &lt;= high and list_1[high] &gt;= pivot:
+            high = high - 1
+        while low &lt;= high and list_1[low] &lt;= pivot:
+            low = low + 1
+
+        if low &lt;= high:
+            list_1[low], list_1[high] = list_1[high], list_1[low]
+        else:
+            break
+    list_1[start], list_1[high] = list_1[high], list_1[start]
+    return high
+
+
+def quick_sort(start, end):
+    # Demonstrates how the Quick sort works
+    for k in list_1:
+        print(k, end=&quot;, &quot;)
+    print()
+
+    if start &gt;= end:
+        return
+    part = partition(start, end)
+    quick_sort(start, part - 1)
+    quick_sort(part + 1, end)
+
+list_1 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+quick_sort(0, len(list_1) - 1)
+print(list_1)
+</code></pre>
+    <p class="has-line-data" data-line-start="125" data-line-end="129">Most sorts are O(N) because every element must be looked at once. The Bubble Sort as we
+        saw is O(N^2)&lt;br&gt;<br>
+        To prove that the Quick Sort is O(n log n) we know that values are only compared once. So, each comparison will reduce the possible final sorted lists
+        in half. So the number of comparisons is log n! (Factorial of N)&lt;br&gt;<br>
+        <code>Comparisons = log n + log(n-1) + ... + log(1)</code>&lt;br&gt;<br>
+        <code>Evaluates to n log n</code></p>
+</div>
+{% endblock %}

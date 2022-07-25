@@ -1,0 +1,16 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+<p class="has-line-data" data-line-start="0" data-line-end="1">Django, being a web framework, needs a web server in order to operate. And since most web servers
+    don’t natively speak Python, we need an interface to make that communication happen.</p>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Django currently supports two interfaces: WSGI and ASGI.</p>
+<blockquote>
+    <p class="has-line-data" data-line-start="4" data-line-end="5"><strong>WSGI</strong> is the main Python standard for communicating between web servers and
+        applications, but it only supports synchronous code.</p>
+</blockquote>
+<blockquote>
+    <p class="has-line-data" data-line-start="6" data-line-end="7"><strong>ASGI</strong> is the new, asynchronous-friendly standard that will allow your Django
+        site to use asynchronous Python features, and asynchronous Django features as they are developed.</p>
+</blockquote>
+{% endblock %}

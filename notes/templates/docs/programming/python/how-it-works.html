@@ -1,0 +1,21 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+<p>Python How it works:</p>
+<p>Low Level Language:<br>
+    Source code -&gt;[compiling] machine readable code<br>
+    Platform dependent</p>
+<p>High Level Language:<br>
+    Source code -&gt;[compiling] Intermediate code -&gt;[Interpreter] Machine readable code<br>
+    Interpreter - PVM(python virtual machine)<br>
+    Platform independent</p>
+<ol>
+    <li>Compiling source code to bytecode</li>
+    <li>Interpret the bytecode in python virtual machine</li>
+</ol>
+<p>Python compiler:<br>
+    Cpython in. c, pypy in python, jython in java, ironpython in .net<br>
+    Converts .py file to .pyc file (Bytecode, platform independent &amp; low level representation)</p>
+<p>Ref: <a href="https://www.youtube.com/watch?v=ZBr_T7XjrC8">https://www.youtube.com/watch?v=ZBr_T7XjrC8</a></p>
+{% endblock %}
