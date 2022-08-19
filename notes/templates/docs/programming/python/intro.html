@@ -3,16 +3,175 @@
 
 {% block content %}
 <div>
-
-    <p>Python runs on an interpreter system(No need to compile and convert into machine language program), meaning that code can be executed as soon as it is
+    <p>Python runs on an interpreter system (No need to compile and convert into machine language program), meaning that code can be executed as soon as it is
         written. This means that prototyping can be very quick.</p>
-    &lt;br&gt;
-    <p><strong>Variables</strong> are containers for storing data values. Variables do not need to be declared with any particular type, and can even change
-        type after they have been set.</p>
-    <pre><pre><code>x = 4 # x is of type int
-x = "Sally" # x is now of type str
-</code></pre></pre>
-    &lt;br&gt;
+    <p>C, C++, and Java are examples of static languages. They require you to specify some low-level details like data types for the computer.</p>
+    <pre><code class="language-java">int language = 2;</code></pre>
+    <p>In contrast, dynamic languages (also called scripting languages) do not force you to declare variable types before using them. Ex: Perl, Ruby, PHP,
+        GO(golang), Python</p>
+    <pre><code class="language-python">language = 2</code></pre>
+    <p>
+        Programs keep track of where (memory location) their bits are, and what (data type) they are. To your computer, it’s all just bits. The same bits mean
+        different things, depending on what type we say they are. The same bit pattern might stand for the integer 65 or the text character A.
+        Some languages plunk and pluck these raw values in memory, keeping track of their sizes and types. Instead of handling such raw data values directly,
+        Python wraps each data values booleans, integers, floats, strings, even large data structures, functions, and programs in memory as an object.
+    </p>
+    In Python, an object is a chunk of data that contains at least the following:
+    <ul>
+        <li>A type that defines what it can do (Its type is like a factory stamp on the box, saying what it can do. If a Python object is an integer, it has the
+            type int and could be added to another int)
+        </li>
+        <li>A unique id to distinguish it from other objects</li>
+        <li>A value consistent with its type</li>
+        <li>A reference count that tracks how often this object is used</li>
+    </ul>
+    <h3>Types</h3>
+    <p>
+        Below Table shows the basic data types in Python. The second column (Type) contains the Python name of that type. The third column (Mutable) indicates
+        whether the value can be changed after creation
+    </p>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Mutable</th>
+            <th>Examples</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Boolean</td>
+            <td>bool</td>
+            <td>no</td>
+            <td>True, False</td>
+        </tr>
+        <tr>
+            <td>Integer</td>
+            <td>int</td>
+            <td>no</td>
+            <td>47, 25000, 25_000</td>
+        </tr>
+        <tr>
+            <td>Floating point</td>
+            <td>float</td>
+            <td>no</td>
+            <td>3.14, 2.7e5</td>
+        </tr>
+        <tr>
+            <td>Complex</td>
+            <td>complex</td>
+            <td>no</td>
+            <td>3j, 5 + 9j</td>
+        </tr>
+        <tr>
+            <td>Text string</td>
+            <td>str</td>
+            <td>no</td>
+            <td>'alas', "alack", '''a verse attack'''</td>
+        </tr>
+        <tr>
+            <td>List</td>
+            <td>list</td>
+            <td>yes</td>
+            <td>['Winken', 'Blinken', 'Nod']</td>
+        </tr>
+        <tr>
+            <td>Tuple</td>
+            <td>tuple</td>
+            <td>no</td>
+            <td>(2, 4, 8)</td>
+        </tr>
+        <tr>
+            <td>Bytes</td>
+            <td>bytes</td>
+            <td>no</td>
+            <td>b'ab\xff'</td>
+        </tr>
+        <tr>
+            <td>ByteArray</td>
+            <td>bytearray</td>
+            <td>yes</td>
+            <td>bytearray(...)</td>
+        </tr>
+        <tr>
+            <td>Set</td>
+            <td>set</td>
+            <td>yes</td>
+            <td>set([3, 5, 7])</td>
+        </tr>
+        <tr>
+            <td>Frozen set</td>
+            <td>frozenset</td>
+            <td>no</td>
+            <td>frozenset(['Elsa', 'Otto'])</td>
+        </tr>
+        <tr>
+            <td>Dictionary</td>
+            <td>dict</td>
+            <td>yes</td>
+            <td>{'game': 'bingo', 'dog': 'dingo', 'drummer': 'Ringo'}</td>
+        </tr>
+        </tbody>
+    </table>
+    <h4>Mutability</h4>
+    <p>
+        The type also determines whether the data value contained by the box can be changed (mutable) or is constant (immutable). Think of an immutable object
+        as a sealed box but with clear sides. A mutable object is like a box with a lid not only can you see the value inside, you can also change it. however,
+        you can’t change its type.
+    </p>
+    <p><strong>
+        Python is strongly typed, which means that the type of object does not change, even if its value is mutable
+    </strong></p>
+    There are two ways of specifying data values in Python:
+    <ul>
+        <li>
+            Literal (integers are a sequence of digits, floats contain a decimal point, text strings are surrounded by quotes, and so on)
+        </li>
+        <li>
+            Variables (lets you define variables—names for values in your computer’s memory that you want to use in a program.)
+        </li>
+    </ul>
+    <h4>Variables</h4>
+    <p>
+        Variables are containers for storing data values. Variables do not need to be declared with any particular type, and can even change
+        type after they have been set.
+    </p>
+    <pre><code>
+        x = 4 # x is of type int
+        x = "Sally" # x is now of type str
+    </code></pre>
+    Python variable names have some rules:
+    <ul>
+        <li>They can contain only these characters
+            <ul>
+                <li>Lowercase letters (a through z)</li>
+                <li>Uppercase letters (A through Z)</li>
+                <li>Digits (0 through 9)</li>
+                <li>Underscore (_)</li>
+            </ul>
+        </li>
+        <li>They are case-sensitive: thing, Thing, and THING are different names</li>
+        <li>They must begin with a letter or an underscore (<i>Names that begin with an underscore are treated specially</i>), not a digit.</li>
+        <li>They cannot be one of Python’s reserved words (also known as keywords).
+            <ul>
+                <li>False, await, else, import, pass, None, break, except, in, raise, True, class, finally, is, return, and, continue, for, lambda, try,
+                    as, def, from, nonlocal, while, assert, del, global, not, with, async, elif, if, or, yield
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        Ex: These are valid names: a, a1, a_b_c___95, _abc, _1a<br>
+        These names, however, are not valid: 1, 1a, 1_, name!, another-name
+    </p>
+    <h4>Variables Are Names, Not Places</h4>
+    <p>
+        Now it’s time to make a crucial point about variables in Python: variables are just names. This is different from many other computer languages, and a
+        key thing to know about Python, especially when we get to mutable objects like lists. Assignment does not copy a value; it just attaches a name to the
+        object that contains the data. The name is a reference to a thing rather than the thing itself. Visualize a name as a tag with a string attached to the
+        object box somewhere else in the computer’s memory
+    </p>
     <p><strong>Casting</strong> is when you convert a variable value from one type to another</p>
     <pre><pre class=" language-python"><code class=" language-python">x <span class="token operator">=</span> <span class="token builtin">str</span><span
             class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>    <span class="token comment"># x will be '3'</span>
